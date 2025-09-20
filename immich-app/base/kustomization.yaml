@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+  - name: immich
+    repo: https://immich-app.github.io/immich-charts
+    version: 1.2.3
+    releaseName: immich
+    namespace: media
+    valuesInline:
+      immich:
+        metrics:
+          # Enabling this will create the service monitors needed to monitor immich with the prometheus operator
+          enabled: false
+        persistence:
+          # Main data store for all photos shared between different components.
+          library:
+            # Automatically creating the library volume is not supported by this chart
+            # You have to specify an existing PVC to use
+            existingClaim: media-pvc
