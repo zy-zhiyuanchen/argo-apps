@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/zy-zhiyuanchen/argo-apps.git
     targetRevision: main
-    path: overlays
+    path: immich-app/overlays
   syncPolicy:
     automated:
       prune: true
