@@ -7,6 +7,10 @@ helmCharts:
     version: 16.7.27
     releaseName: postgresql
     valuesInline:
+      image:
+        registry: ghcr.io
+        repository: tensorchord/pgvecto-rs
+        tag: pg17-v0.4.0
       global:
         postgresql:
           auth:
