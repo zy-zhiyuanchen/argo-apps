@@ -3,7 +3,7 @@ kind: Kustomization
 
 helmCharts:
   - name: immich
-    repo: oci://registry-1.docker.io/bitnamicharts/postgresql
+    repo: https://immich-app.github.io/immich-charts
     version: 0.9.3
     releaseName: immich
     namespace: immich
