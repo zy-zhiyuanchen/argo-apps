@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+  - name: postgresql
+    repo: https://charts.bitnami.com/bitnami
+    version: 16.7.27
+    releaseName: immich-postgresql
+    namespace: immich
+    valuesInline:
+      global:
+        postgresql:
+          auth:
+            username: immich
+            database: immich
+            password: immich
+      primary:
+        containerSecurityContext:
+          readOnlyRootFilesystem: false
+        initdb:
+          scripts:
+            create-extensions.sql: |
+              CREATE EXTENSION cube;
+              CREATE EXTENSION earthdistance;
+              CREATE EXTENSION vectors;
