@@ -6,7 +6,6 @@ helmCharts:
     repo: https://immich-app.github.io/immich-charts
     version: 0.9.3
     releaseName: immich
-    namespace: immich
     valuesInline:
       env:
         DB_HOSTNAME: "postgresql"
