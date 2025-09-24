@@ -12,6 +12,8 @@ helmCharts:
         repository: tensorchord/pgvecto-rs
         tag: pg17-v0.4.0
       global:
+        security:
+          allowInsecureImages: true
         postgresql:
           auth:
             username: immich
