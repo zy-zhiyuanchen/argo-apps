@@ -3,5 +3,4 @@ kind: Kustomization
 
 resources:
   - storage/      # Deploy storage first
-  - db/     # Then database (depends on storage)
   - app/          # Finally the app (depends on database)
