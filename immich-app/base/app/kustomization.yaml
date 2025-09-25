@@ -8,7 +8,7 @@ helmCharts:
     releaseName: immich
     valuesInline:
       env:
-        DB_HOSTNAME: "postgresql"
+        DB_HOSTNAME: "immich-postgres"
       immich:
         metrics:
           # Enabling this will create the service monitors needed to monitor immich with the prometheus operator

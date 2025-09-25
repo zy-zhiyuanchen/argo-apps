@@ -1,30 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-helmCharts:
-  - name: postgresql
-    repo: https://charts.bitnami.com/bitnami
-    version: 16.7.27
-    releaseName: postgresql
-    valuesInline:
-      image:
-        registry: ghcr.io
-        repository: tensorchord/pgvecto-rs
-        tag: pg17-v0.4.0
-      global:
-        security:
-          allowInsecureImages: true
-        postgresql:
-          auth:
-            username: immich
-            database: immich
-            password: immich
-      primary:
-        containerSecurityContext:
-          readOnlyRootFilesystem: false
-        initdb:
-          scripts:
-            create-extensions.sql: |
-              CREATE EXTENSION cube;
-              CREATE EXTENSION earthdistance;
-              CREATE EXTENSION vectors;
+resources:
+  - all-in-one.yaml
