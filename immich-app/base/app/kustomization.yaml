@@ -9,6 +9,8 @@ helmCharts:
     valuesInline:
       env:
         DB_HOSTNAME: "immich-postgres"
+      image:
+        tag: v1.143.0
       immich:
         metrics:
           # Enabling this will create the service monitors needed to monitor immich with the prometheus operator
@@ -18,7 +20,7 @@ helmCharts:
           library:
             # Automatically creating the library volume is not supported by this chart
             # You have to specify an existing PVC to use
-            existingClaim: nfs-pvc
+            existingClaim: immich-pvc
       redis:
         # Redis is used as a cache and for background job processing
         enabled: true
