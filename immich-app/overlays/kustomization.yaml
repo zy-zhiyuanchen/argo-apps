@@ -12,7 +12,3 @@ patches:
       - op: replace
         path: /spec/type
         value: LoadBalancer
-      - op: add
-        path: /metadata/labels
-        value:
-          bgp: "public"

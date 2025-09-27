@@ -12,5 +12,3 @@ helmCharts:
           existingClaim: jellyfin-pvc
       service:
         type: LoadBalancer
-        labels:
-          bgp: "public"
