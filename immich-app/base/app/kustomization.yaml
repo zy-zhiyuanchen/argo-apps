@@ -10,7 +10,7 @@ helmCharts:
       env:
         DB_HOSTNAME: "immich-postgres"
       image:
-        tag: v1.143.0
+        tag: v1.143.1
       immich:
         metrics:
           # Enabling this will create the service monitors needed to monitor immich with the prometheus operator
