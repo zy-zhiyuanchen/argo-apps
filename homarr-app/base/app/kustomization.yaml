@@ -8,14 +8,14 @@ helmCharts:
     releaseName: homarr
     valuesInline:
       env:
-        TZ: Asia/Shanghai     
+        TZ: "Asia/Shanghai"    
         LOG_LEVEL: "info"
-        envSecrets:
-            # The name of DB Credentials existing secret
-          dbCredentials:
-            # -- Name of existing secret containing DB credentials
-            # Have to be created before applying this kustomization
-            existingSecret: "db-secret"
+      envSecrets:
+        # The name of DB Credentials existing secret
+        dbCredentials:
+          # -- Name of existing secret containing DB credentials
+          # Have to be created before applying this kustomization
+          existingSecret: "db-secret"
       service:
         type: LoadBalancer
   
