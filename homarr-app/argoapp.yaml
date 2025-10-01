@@ -5,14 +5,17 @@ metadata:
   namespace: argocd
 spec:
   destination:
+    namespace: homearr
     server: https://kubernetes.default.svc
-    namespace: media
-  project: default
   source:
+    path: homarr-app/overlays
     repoURL: https://github.com/zy-zhiyuanchen/argo-apps.git
     targetRevision: main
-    path: homearr-app/overlays
+  sources: []
+  project: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
