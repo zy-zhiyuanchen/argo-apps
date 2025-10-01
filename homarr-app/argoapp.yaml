@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homearr
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: media
+  project: default
+  source:
+    repoURL: https://github.com/zy-zhiyuanchen/argo-apps.git
+    targetRevision: main
+    path: homearr-app/overlays
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
