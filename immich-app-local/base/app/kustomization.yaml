@@ -1,14 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+helmGlobals:
+  chartHome: ../immich
+
 helmCharts:
   - name: immich
-    repo: https://immich-app.github.io/immich-charts
-    version: 0.9.3
     releaseName: immich
     valuesInline:
-      env:
-        DB_HOSTNAME: "immich-postgres"
+      externalDatabase:
+        # -- The hostname of your external PostgreSQL database.
+        host: "immich-postgres"
       immich:
         metrics:
           # Enabling this will create the service monitors needed to monitor immich with the prometheus operator
@@ -19,6 +21,11 @@ helmCharts:
             # Automatically creating the library volume is not supported by this chart
             # You have to specify an existing PVC to use
             existingClaim: immich-pvc
+      server:
+        enabled: true
+        service:
+          main:
+            type: LoadBalancer
       redis:
         # Redis is used as a cache and for background job processing
         enabled: true
