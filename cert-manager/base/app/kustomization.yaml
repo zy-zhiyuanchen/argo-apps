@@ -7,4 +7,6 @@ helmCharts:
     version: v1.19.0
     releaseName: cert-manager
     valuesInline:
-      installCRDs: true
+      global:
+        leaderElection:
+          namespace: cert-manager
