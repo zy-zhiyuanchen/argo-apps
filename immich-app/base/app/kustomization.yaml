@@ -4,6 +4,9 @@ kind: Kustomization
 resources:
   - db_secret.yaml
 
+commonAnnotations:
+  argocd.argoproj.io/sync-wave: "2"
+
 helmCharts:
   - name: immich
     repo: https://immich-app.github.io/immich-charts

@@ -4,6 +4,8 @@ kind: Cluster
 metadata:
   # You will need to update your application to use the service name ({clustername}-rw).  
   name: immich-database
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   instances: 1
 
@@ -22,7 +24,7 @@ spec:
       owner: immich
       secret:
         name: immich-db-secret
-      postInitSQL:
+      postInitApplicationSQL:
         # Commands based on: https://immich.app/docs/administration/postgres-standalone/#without-superuser-permission
         - CREATE EXTENSION vchord CASCADE;
         - CREATE EXTENSION earthdistance CASCADE;
