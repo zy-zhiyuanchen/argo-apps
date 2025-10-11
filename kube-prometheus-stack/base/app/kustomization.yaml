@@ -7,6 +7,8 @@ helmCharts:
     version: 78.1.0
     releaseName: kube-prometheus-stack
     valuesInline:
+      crds:
+        enabled: false
       grafana:
         service:
           type: LoadBalancer
