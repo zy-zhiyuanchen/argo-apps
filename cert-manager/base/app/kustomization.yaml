@@ -11,5 +11,5 @@ helmCharts:
         leaderElection:
           namespace: cert-manager
       crds:
-        install: true
+        enabled: true
       
