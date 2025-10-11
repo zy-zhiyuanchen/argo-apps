@@ -10,3 +10,6 @@ helmCharts:
       global:
         leaderElection:
           namespace: cert-manager
+      crds:
+        install: true
+      
