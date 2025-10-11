@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: homarr
+  name: cloudnative-pg
   namespace: argocd
 spec:
   destination:
-    namespace: homarr
+    namespace: cnpg-system
     server: https://kubernetes.default.svc
   source:
-    path: homarr-app/overlays
+    path: cloudnative-pg/overlays
     repoURL: https://github.com/zy-zhiyuanchen/argo-apps.git
     targetRevision: main
   sources: []
@@ -17,4 +17,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions: []
+    syncOptions:
+    - CreateNamespace=true

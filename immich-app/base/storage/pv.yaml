@@ -1,4 +1,4 @@
----
+# This PV/PVC is for Immich's media storage, using an NFS share on an OpenWrt router.
 apiVersion: v1
 kind: PersistentVolume
 metadata:
