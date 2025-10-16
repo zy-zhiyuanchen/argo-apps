@@ -1,0 +1,10 @@
+prometheusOperator:
+  admissionWebhooks:
+    certManager:
+      enabled: true
+grafana:
+  service:
+    type: LoadBalancer
+kubeProxy:
+  # Cilium replaces Kube Proxy
+  enabled: false

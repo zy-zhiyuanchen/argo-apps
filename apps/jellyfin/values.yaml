@@ -1,0 +1,5 @@
+persistence:
+  media:
+    existingClaim: jellyfin-pvc
+service:
+  type: LoadBalancer

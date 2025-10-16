@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jellyfin-pv
+spec:
+  capacity:
+    storage: 50Gi   # arbitrary, NFS does not enforce this
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.2.1   # your OpenWrt router IP
+    path: /mnt/nfsdata/jellyfin
+  persistentVolumeReclaimPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jellyfin-pvc
+spec:
+  storageClassName: ""    
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 50Gi
+  volumeName: jellyfin-pv

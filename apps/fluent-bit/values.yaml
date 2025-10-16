@@ -1,0 +1,66 @@
+config:
+  inputs: |
+    [INPUT]
+        Name tail
+        Path /var/log/containers/*.log
+        multiline.parser docker, cri
+        Tag kube.*
+        Mem_Buf_Limit 5MB
+        Skip_Long_Lines On
+
+    [INPUT]
+        Name systemd
+        Tag k3s_logs
+        Systemd_Filter _SYSTEMD_UNIT=k3s.service
+        Read_From_Tail On
+
+    [INPUT]
+        Name kubernetes_events
+        Tag k8s_events
+        Kube_Url https://kubernetes.default.svc
+
+    [INPUT]
+        Name tail
+        Tag syslog.*
+        Path /var/log/syslog
+        Mem_Buf_Limit 5MB
+        Skip_Long_Lines On
+
+  filters: |
+    [FILTER]
+        Name kubernetes
+        Match kube.*
+        Merge_Log On
+        Keep_Log Off
+        K8S-Logging.Parser On
+        K8S-Logging.Exclude On
+
+  outputs: |
+    [OUTPUT]
+        Name loki
+        Match kube.*
+        Host loki.monitoring.svc.cluster.local
+        Port 3100
+        Labels job=containerlog
+        Label_Keys $kubernetes['namespace_name'], $kubernetes['pod_name'], $kubernetes['container_name']
+
+    [OUTPUT]
+        Name loki
+        Match k3s_logs
+        Host loki.monitoring.svc.cluster.local
+        Port 3100
+        Labels job=k3s
+
+    [OUTPUT]
+        Name loki
+        Match k8s_events
+        Host loki.monitoring.svc.cluster.local
+        Port 3100
+        Labels job=kubelet
+
+    [OUTPUT]
+        Name loki
+        Match syslog.*
+        Host loki.monitoring.svc.cluster.local
+        Port 3100
+        Labels job=syslog

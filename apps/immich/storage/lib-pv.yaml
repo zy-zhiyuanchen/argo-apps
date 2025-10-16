@@ -1,0 +1,27 @@
+# This PV/PVC is for Immich's media storage, using an NFS share on an OpenWrt router.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: immich-pv
+spec:
+  capacity:
+    storage: 10Gi   # arbitrary, NFS does not enforce this
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.2.1   # your OpenWrt router IP
+    path: /mnt/nfsdata/immich
+  persistentVolumeReclaimPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: immich-pvc
+spec:
+  storageClassName: ""    
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  volumeName: immich-pv

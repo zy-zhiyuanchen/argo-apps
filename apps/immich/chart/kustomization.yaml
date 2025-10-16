@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+helmCharts:
+  - name: immich
+    repo: https://immich-app.github.io/immich-charts
+    version: 0.10.0
+    releaseName: immich
+    valuesFile: values.yaml
+commonAnnotations:
+  argocd.argoproj.io/sync-wave: "1"
