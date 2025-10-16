@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: media
 resources:
   - lib-pv.yaml
-  - db.yaml
+  - db-cluster.yaml
   - db-secret.yaml
 commonAnnotations:
   argocd.argoproj.io/sync-wave: "0"
