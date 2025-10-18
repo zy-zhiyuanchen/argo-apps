@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - homepage.local.lan
+        - homepage.njyzy.space
       secretName: homepage-tls
   rules:
-  - host: homepage.local.lan
+  - host: homepage.njyzy.space
     http:
       paths:
       - path: /()?
@@ -27,13 +27,27 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: argocd-server
+            name: argocd-server.argocd
             port:
               number: 80
       - path: /grafana(/|$)(.*)
         pathType: Prefix
         backend:
+          service: 
+            name: kube-prometheus-stack-grafana.monitoring
+            port:
+              number: 80
+      - path: /jellyfin(/|$)(.*)
+        pathType: Prefix
+        backend:
           service:
-            name: grafana
+            name: jellyfin.media
+            port:
+              number: 8096
+      - path: /hubble(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: hubble-ui
             port:
               number: 80
