@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+data:
+  settings.yaml: |
+    title: "My Homepage"
+    theme: dark
+    layout:
+      - apps
+      - widgets
+  widgets.yaml: |
+    - resources:
+        cpu: true
+        memory: true
+        disk: true
+  services.yaml: |
+    - ArgoCD:
+        href: /argo
+        icon: argo
+    - Grafana:
+        href: /grafana
+        icon: grafana

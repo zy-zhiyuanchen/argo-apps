@@ -1,0 +1,14 @@
+persistence:
+  enabled: true
+  size: 1Gi
+
+configMap:
+  enabled: true
+  mountPath: /config
+  items:
+    - key: configuration.yaml
+      path: configuration.yaml
+
+service:
+  type: ClusterIP
+  port: 9091

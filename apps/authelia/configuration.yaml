@@ -1,0 +1,43 @@
+theme: dark
+jwt_secret: "replace-with-random-secret"
+default_redirection_url: https://home.lan
+server:
+  address: tcp://0.0.0.0:9091
+  asset_path: /public_html
+  disable_healthcheck: false
+
+log:
+  level: info
+
+authentication_backend:
+  file:
+    path: /config/users_database.yml
+    password:
+      algorithm: argon2id
+
+session:
+  name: authelia_session
+  secret: "replace-with-random-session-secret"
+  expiration: 3600
+  inactivity: 300
+  cookies:
+    - domain: home.lan
+      authelia_url: https://auth.home.lan
+
+storage:
+  local:
+    path: /config/db.sqlite3
+
+access_control:
+  default_policy: deny
+  rules:
+    - domain:
+        - "*.home.lan"
+      policy: one_factor
+    - domain:
+        - "auth.home.lan"
+      policy: bypass
+
+notifier:
+  filesystem:
+    filename: /config/notification.txt

@@ -4,7 +4,7 @@ prometheusOperator:
       enabled: true
 grafana:
   service:
-    type: LoadBalancer
+    type: ClusterIP
 kubeProxy:
   # Cilium replaces Kube Proxy
   enabled: false

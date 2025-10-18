@@ -1,0 +1,10 @@
+controller:
+  ingressClassResource:
+    enabled: true
+    name: nginx
+    controllerValue: k8s.io/ingress-nginx
+  # config:
+  #   # Redirect all to Authelia by default
+  #   auth-url: "http://authelia.auth.svc.cluster.local/api/verify"
+  #   auth-signin: "https://auth.home.lan"
+  #   auth-response-headers: "X-Forwarded-User, X-Forwarded-Groups"
