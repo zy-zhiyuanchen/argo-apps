@@ -13,6 +13,9 @@ spec:
     hostname: "*.njyzy.space"
     port: 80
     protocol: HTTP
+    allowedRoutes:
+      namespaces:
+        from: All
     # tls:
     #   mode: Terminate
     #   certificateRefs:
