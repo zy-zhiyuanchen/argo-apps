@@ -8,10 +8,10 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
-  # tls:
-  #   - hosts:
-  #       - homepage.njyzy.space
-  #     secretName: homepage-tls
+  tls:
+    - hosts:
+        - homepage.njyzy.space
+      secretName: homepage-tls
   rules:
   - host: homepage.njyzy.space
     http:
