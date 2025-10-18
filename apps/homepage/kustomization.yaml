@@ -1,14 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: default
 resources:
-  - service-account.yaml
-  - service.yaml
-  - deployment.yaml
-  - configmap.yaml
-  - ns.yaml
-  - gateway.yaml
-  - httproute.yaml
+  - gateway/
+  - app/
 
 commonLabels:
   app.kubernetes.io/name: homepage

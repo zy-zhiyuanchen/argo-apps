@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: homepage-cert
   dnsNames:
-    - homepage.local.lan
+    - homepage.njyzy.space
   issuerRef:
     name: ca-issuer   # or your cluster issuer
     kind: ClusterIssuer
