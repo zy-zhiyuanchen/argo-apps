@@ -5,8 +5,8 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-    - name: cilium-gateway
-      namespace: gateway
+    - name: homepage-gateway
+      namespace: default
   hostnames:
     - homepage.njyzy.space
   rules:
@@ -25,10 +25,10 @@ metadata:
   namespace: argocd
 spec:
   parentRefs:
-    - name: cilium-gateway
-      namespace: gateway
+    - name: homepage-gateway
+      namespace: default
   hostnames:
-    - argocd.njyzy.space
+    - homepage.njyzy.space
   rules:
     - matches:
         - path:
@@ -45,10 +45,10 @@ metadata:
   namespace: monitoring
 spec:
   parentRefs:
-    - name: cilium-gateway
-      namespace: gateway
+    - name: homepage-gateway
+      namespace: default
   hostnames:
-    - grafana.njyzy.space
+    - homepage.njyzy.space
   rules:
     - matches:
         - path:
@@ -65,10 +65,10 @@ metadata:
   namespace: media
 spec:
   parentRefs:
-    - name: cilium-gateway
-      namespace: gateway
+    - name: homepage-gateway
+      namespace: default
   hostnames:
-    - immich.njyzy.space
+    - homepage.njyzy.space
   rules:
     - matches:
         - path:
@@ -85,10 +85,10 @@ metadata:
   namespace: kube-system
 spec:
   parentRefs:
-    - name: cilium-gateway
-      namespace: gateway
+    - name: homepage-gateway
+      namespace: default
   hostnames:
-    - hubble.njyzy.space
+    - homepage.njyzy.space
   rules:
     - matches:
         - path:

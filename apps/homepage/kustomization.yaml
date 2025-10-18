@@ -6,7 +6,9 @@ resources:
   - service.yaml
   - deployment.yaml
   - configmap.yaml
+  - ns.yaml
   - gateway.yaml
+  - httproute.yaml
 
 commonLabels:
   app.kubernetes.io/name: homepage

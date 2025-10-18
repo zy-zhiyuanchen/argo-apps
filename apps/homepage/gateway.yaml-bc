@@ -1,27 +1,22 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: cilium-gateway
-  namespace: gateway
+  name: homepage-gateway
+  namespace: default
 spec:
   gatewayClassName: cilium
   addresses:
     - type: IPAddress
       value: "192.168.31.0"
   listeners:
-  - name: http-gateway
-    hostname: "*.njyzy.space"
+  - name: http-domain-gateway
+    hostname: homepage.njyzy.space
     port: 80
     protocol: HTTP
     # tls:
     #   mode: Terminate
     #   certificateRefs:
     #     - name: homepage-cert   # TLS secret from cert-manager or manually created
-  # - name: https-gateway
-  #   hostname: "*.njyzy.space"
-  #   port: 443
-  #   protocol: HTTPs
-  #   # tls:
-  #   #   mode: Terminate
-  #   #   certificateRefs:
-  #   #     - name: homepage-cert   # TLS secret from cert-manager or manually created
+    allowedRoutes:
+      namespaces:
+        from: All   # allow all namespaces to attach routes
