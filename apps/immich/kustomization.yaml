@@ -5,3 +5,11 @@ resources:
   - storage/
   - chart/
 
+patches:
+  - target:
+      kind: Service
+      name: immich-server
+    patch: |-
+      - op: replace
+        path: /spec/type
+        value: LoadBalancer
