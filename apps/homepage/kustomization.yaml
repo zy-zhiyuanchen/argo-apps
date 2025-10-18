@@ -3,7 +3,3 @@ kind: Kustomization
 resources:
   - gateway/
   - app/
-
-commonLabels:
-  app.kubernetes.io/name: homepage
-  app.kubernetes.io/instance: homepage
