@@ -16,8 +16,8 @@ data:
         disk: true
   services.yaml: |
     - ArgoCD:
-        href: /argo
+        href: argo.njyzy.space
         icon: argo
     - Grafana:
-        href: /grafana
+        href: grafana.njyzy.space
         icon: grafana
