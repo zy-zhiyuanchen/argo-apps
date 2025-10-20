@@ -5,7 +5,7 @@ resources:
   - service.yaml
   - deployment.yaml
   - configmap.yaml
+  - role.yaml
+  - secret.yaml
+  - serviceaccount.yaml
   
-commonLabels:
-  app.kubernetes.io/name: homepage
-  app.kubernetes.io/instance: homepage
