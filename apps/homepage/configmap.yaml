@@ -10,14 +10,26 @@ data:
       - apps
       - widgets
   widgets.yaml: |
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "cluster"
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
     - resources:
+        backend: resources
+        expanded: true
         cpu: true
         memory: true
-        disk: true
+        network: default
   services.yaml: |
     - ArgoCD:
         href: argo.njyzy.space
-        icon: argo
     - Grafana:
         href: grafana.njyzy.space
-        icon: grafana
