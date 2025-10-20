@@ -3,6 +3,8 @@
 # metadata:
 #   name: authelia
 #   namespace: argocd
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
 # spec:
 #   destination:
 #     namespace: authelia
