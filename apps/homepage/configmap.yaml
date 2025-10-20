@@ -5,6 +5,15 @@ metadata:
   labels:
     app.kubernetes.io/name: homepage
 data:
+  kubernetes.yaml: |
+    mode: cluster
+  custom.css: ""
+  custom.js: ""
+  bookmarks.yaml: |
+    - Developer:
+        - Github:
+            - abbr: GH
+              href: https://github.com/
   settings.yaml: |
     title: "My Homepage"
     theme: dark
@@ -35,3 +44,4 @@ data:
         href: argo.njyzy.space
     - Grafana:
         href: grafana.njyzy.space
+  docker.yaml: ""
