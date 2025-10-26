@@ -12,13 +12,13 @@ provider:
     livenessProbe:
       httpGet:
         path: /ping
-        port: 8888
+        port: http-webhook
       initialDelaySeconds: 10
       timeoutSeconds: 5
     readinessProbe:
       httpGet:
         path: /ping
-        port: 8888
+        port: http-webhook
       initialDelaySeconds: 10
       timeoutSeconds: 5
     env:
