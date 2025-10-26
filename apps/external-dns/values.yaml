@@ -4,7 +4,7 @@ gatewayNamespace: gateway
 sources:
   - gateway-httproute
 provider:
-  name: hook
+  name: webhook
   webhook:
     image:
       repository: renanqts/external-dns-openwrt-webhook
