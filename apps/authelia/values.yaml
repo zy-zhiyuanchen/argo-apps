@@ -1,21 +1,22 @@
-persistence:
-  enabled: true
-  size: 100Mi
+# persistence:
+#   enabled: true
+#   size: 100Mi
 
 configMap:
   storage:
     local:
       enabled: true
   session:
-    cookies:
-      - domain: 'njyzy.space'
-        subdomain: 'auth'
+    cookies: [ { domain: 127.0.0.1 } ]
+    # cookies:
+    #   - domain: 'njyzy.space'
+    #     subdomain: 'auth'
   notifier:
     filesystem: { enabled: true }
   authentication_backend:
     file: { enabled: true }
 
-ingress:
-  enabled: true
-  gatewayAPI:
-    enabled: true
+# ingress:
+#   enabled: true
+#   gatewayAPI:
+#     enabled: true
