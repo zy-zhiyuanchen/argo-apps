@@ -122,7 +122,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: authelia-route
-  namespace: kube-system
+  namespace: authelia
 spec:
   parentRefs:
     - name: cilium-gateway
