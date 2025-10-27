@@ -7,9 +7,13 @@ configMap:
     local:
       enabled: true
   session:
-    cookies: [ { domain: njyzy.space } ]
-      # - subdomain: 'auth'
-      # - domain: 'njyzy.space'
+    cookies:
+      - domain: 'njyzy.space'
+        subdomain: 'auth'
+  notifier:
+    filesystem: { enabled: true }
+  authentication_backend:
+    file: { enabled: true }
 
 ingress:
   enabled: true
