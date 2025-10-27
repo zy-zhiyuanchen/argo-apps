@@ -8,8 +8,8 @@ configMap:
       enabled: true
   session:
     cookies:
-      subdomain: 'auth'
-      domain: 'njyzy.space'
+      - subdomain: 'auth'
+      - domain: 'njyzy.space'
 
 ingress:
   enabled: true
