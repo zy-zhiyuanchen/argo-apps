@@ -22,4 +22,3 @@ ingress:
     enabled: true
   parentRefs:
     - name: cilium-gateway
-      namespace: gateway
