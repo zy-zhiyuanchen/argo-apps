@@ -1,12 +1,12 @@
-# pod:
-#   env: [ { name: TZ, value: Asia/Shanghai } ]
-#   extraVolumeMounts:
-#     - name: users
-#       mountPath: /config/users.yaml
-#       subPath: users.yaml
-#   extraVolumes:
-#     - name: users
-#       secret: { secretName: users }
+pod:
+  env: [ { name: TZ, value: Asia/Shanghai } ]
+  extraVolumeMounts:
+    - name: users
+      mountPath: /config/users.yaml
+      subPath: users.yaml
+  extraVolumes:
+    - name: users
+      secret: { secretName: users }
 
 
 # persistence:
@@ -40,4 +40,4 @@ configMap:
   authentication_backend:
     file: 
       enabled: true
-      # path: /config/users.yaml
+      path: /config/users.yaml
