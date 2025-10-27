@@ -15,10 +15,3 @@ configMap:
     filesystem: { enabled: true }
   authentication_backend:
     file: { enabled: true }
-
-ingress:
-  enabled: true
-  gatewayAPI:
-    enabled: true
-  parentRefs:
-    - name: cilium-gateway
