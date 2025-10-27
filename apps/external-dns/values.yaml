@@ -1,5 +1,5 @@
 logLevel: info
-interval: 60m
+interval: 5m
 policy: upsert-only
 gatewayNamespace: gateway
 sources:
