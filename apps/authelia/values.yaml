@@ -20,3 +20,6 @@ ingress:
   enabled: true
   gatewayAPI:
     enabled: true
+  parentRefs:
+    - name: cilium-gateway
+      namespace: gateway
