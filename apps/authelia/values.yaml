@@ -1,14 +1,17 @@
 persistence:
   enabled: true
-  size: 1Gi
+  size: 100Mi
 
 configMap:
-  enabled: true
-  mountPath: /config
-  items:
-    - key: configuration.yaml
-      path: configuration.yaml
+  storage:
+    local:
+      enabled: true
+  session:
+    cookies:
+      subdomain: 'auth'
+      domain: 'njyzy.space'
 
-service:
-  type: ClusterIP
-  port: 9091
+ingress:
+  enabled: true
+  gatewayAPI:
+    enabled: true

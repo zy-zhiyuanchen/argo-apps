@@ -4,6 +4,6 @@ namespace: authelia
 helmCharts:
   - name: authelia
     repo: https://charts.authelia.com
-    version: 0.10.46
+    version: 0.10.47
     releaseName: authelia
     valuesFile: values.yaml
