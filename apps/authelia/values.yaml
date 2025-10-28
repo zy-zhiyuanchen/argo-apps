@@ -15,14 +15,16 @@ pod:
 
 configMap:
   storage:
-    postgres:
+    local:
       enabled: true
-      deploy: false
-      address: authelia-database-rw:5432
-      database: authelia
-      username: authelia
-      password:
-        secret_name: authelia-database-app
+    # postgres:
+    #   enabled: true
+    #   deploy: false
+    #   address: authelia-database-rw:5432
+    #   database: authelia
+    #   username: authelia
+    #   password:
+    #     secret_name: authelia-database-app
   session:
     cookies:
       - domain: 'njyzy.space'
