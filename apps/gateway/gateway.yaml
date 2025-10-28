@@ -23,7 +23,10 @@ spec:
   - name: https-gateway
     hostname: "*.njyzy.space"
     port: 443
-    protocol: HTTPs
+    protocol: HTTPS
+    allowedRoutes:
+      namespaces:
+        from: All
     tls:
       mode: Terminate
       certificateRefs:
