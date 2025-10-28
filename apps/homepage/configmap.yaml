@@ -25,7 +25,7 @@ data:
       # brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
       # opacity: 50 # 0-100
     headerStyle: clean
-    # bookmarksStyle: icons
+    bookmarksStyle: icons
     layout:
       Media:
         style: row
