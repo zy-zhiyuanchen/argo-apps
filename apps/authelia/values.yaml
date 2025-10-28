@@ -26,6 +26,7 @@ configMap:
   session:
     cookies:
       - domain: 'njyzy.space'
+        default_redirection_url: 'http://homepage.njyzy.space'
   notifier:
     filesystem:
       enabled: true
