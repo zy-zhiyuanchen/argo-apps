@@ -41,7 +41,7 @@ configMap:
     file: 
       enabled: true
       path: /config/users.yaml
-secret:
-  additionalSecrets:
-    authelia-database-app:
-      items: [ { key: password, path: storage.postgres.password.txt } ]
+# secret:
+#   additionalSecrets:
+#     authelia-database-app:
+#       items: [ { key: password, path: storage.postgres.password.txt } ]
