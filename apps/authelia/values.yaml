@@ -25,7 +25,7 @@ configMap:
         secret_name: authelia-postgres-secret
   session:
     cookies:
-      - domain: 'auth.njyzy.space'
+      - domain: 'njyzy.space'
         default_redirection_url: 'http://homepage.njyzy.space'
   notifier:
     filesystem:
