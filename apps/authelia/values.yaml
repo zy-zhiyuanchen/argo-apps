@@ -18,11 +18,11 @@ configMap:
     postgres:
       enabled: true
       deploy: false
-      address: authelia-postgres-rw:5432
+      address: authelia-database-rw:5432
       database: authelia
       username: authelia
       password:
-        secret_name: authelia-postgres-secret
+        secret_name: authelia-database-secret
   session:
     cookies:
       - domain: 'njyzy.space'
@@ -40,5 +40,5 @@ configMap:
       path: /config/users.yaml
 secret:
   additionalSecrets:
-    authelia-postgres-secret:
+    authelia-database-secret:
       items: [ { key: password, path: storage.postgres.password.txt } ]
