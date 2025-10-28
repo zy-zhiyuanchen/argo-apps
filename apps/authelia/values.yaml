@@ -34,7 +34,7 @@ configMap:
     default_policy: deny
     rules:
       - domain_regex: '^.*\.njyzy.space$'
-        policy: one_factor
+        policy: deny
   authentication_backend:
     file: 
       enabled: true
