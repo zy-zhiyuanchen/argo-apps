@@ -20,8 +20,8 @@ data:
     theme: dark
     background:
       image: https://images.unsplash.com/flagged/photo-1554443883-83db889b4007?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format
-      blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
-      # saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+      blur: xl # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+      saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
       # brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
       # opacity: 50 # 0-100
     headerStyle: clean
