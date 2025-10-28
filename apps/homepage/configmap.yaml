@@ -5,8 +5,6 @@ metadata:
   labels:
     app.kubernetes.io/name: homepage
 data:
-  kubernetes.yaml: |
-    mode: cluster
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
@@ -17,31 +15,57 @@ data:
   settings.yaml: |
     title: "My Homepage"
     theme: dark
+    background:
+      image: /images/background.png
+      blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+      saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+      brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+      opacity: 50 # 0-100
+    headerStyle: clean
+    bookmarksStyle: icons
     layout:
-      - apps
-      - widgets
+      Media:
+        style: row
+        columns: 3
+      Monitoring:
+        style: row
+        columns: 3
+      Control:
+        style: row
+        columns: 3
+      Auth:
+        style: row
+        columns: 3
+    quicklaunch:
+      searchDescriptions: true
+      hideInternetSearch: true
+      showSearchSuggestions: true
+      hideVisitURL: true
+      provider: google # google, duckduckgo, bing, baidu, brave or custom  
   widgets.yaml: |
-    - kubernetes:
-        cluster:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-          label: "cluster"
-        nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-    - resources:
-        backend: resources
-        expanded: true
-        cpu: true
-        memory: true
-        network: default
+
   services.yaml: |
-    - ArgoCD:
-        href: argo.njyzy.space
-    - Grafana:
-        href: grafana.njyzy.space
-  docker.yaml: ""
+    - Media:
+      - Immich:
+          icon: immich.png
+          href: https://immich.njyzy.space/
+      - Jellyfin:
+          icon: jellyfin.png
+          href: https://jellyfin.njyzy.space/
+    - Monitoring:
+      - Grafana:
+          icon: grafana.png
+          href: https://grafana.njyzy.space/
+      - Hubble:
+          icon: cilium.png
+          href: https://hubble.njyzy.space/
+    - Control:
+      - argocd:
+          icon: argo-cd.png
+          href: https://argocd.njyzy.space/
+    - Auth:
+      - Authelia:
+          icon: authelia.png
+          href: https://auth.njyzy.space/
+
+
