@@ -32,9 +32,9 @@ configMap:
       enabled: true
   access_control:
     default_policy: deny
-    rules:
-      - domain: '*.njyzy.space'
-        policy: 'deny'
+    # rules:
+    #   - domain: '*.njyzy.space'
+    #     policy: 'deny'
   authentication_backend:
     file: 
       enabled: true
