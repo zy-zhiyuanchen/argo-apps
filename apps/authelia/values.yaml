@@ -22,7 +22,7 @@ configMap:
       database: authelia
       username: authelia
       password:
-        secret_name: authelia-postgres-app
+        secret_name: authelia-postgres-secret
   session:
     cookies:
       - domain: 'auth.njyzy.space'
@@ -39,3 +39,7 @@ configMap:
     file: 
       enabled: true
       path: /config/users.yaml
+secret:
+  additionalSecrets:
+    authelia-postgres-secret:
+      items: [ { key: password, path: storage.postgres.password.txt } ]
