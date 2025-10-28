@@ -9,13 +9,13 @@ spec:
     - type: IPAddress
       value: "192.168.31.0"
   listeners:
-  - name: http-gateway
-    hostname: "*.njyzy.space"
-    port: 80
-    protocol: HTTP
-    allowedRoutes:
-      namespaces:
-        from: All
+  # - name: http-gateway
+  #   hostname: "*.njyzy.space"
+  #   port: 80
+  #   protocol: HTTP
+  #   allowedRoutes:
+  #     namespaces:
+  #       from: All
     # tls:
     #   mode: Terminate
     #   certificateRefs:
