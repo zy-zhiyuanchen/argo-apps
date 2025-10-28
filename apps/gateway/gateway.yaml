@@ -27,4 +27,4 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-        - name: homepage-cert   # TLS secret from cert-manager or manually created
+        - name: gateway-cert   # TLS secret from cert-manager or manually created
