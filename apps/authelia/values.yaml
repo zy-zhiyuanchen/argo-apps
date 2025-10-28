@@ -15,20 +15,18 @@ pod:
 
 configMap:
   storage:
-    local:
+    postgres:
       enabled: true
-    # postgres:
-    #   enabled: true
-    #   deploy: false
-    #   address: tcp://authelia-postgres-rw:5432
-    #   database: authelia
-    #   username: authelia
-    #   password: { secret_name: authelia-postgres-app }
+      deploy: false
+      address: authelia-postgres-rw:5432
+      database: authelia
+      username: authelia
+      password:
+        secret_name: authelia-postgres-app
   session:
-    # cookies: [ { domain: 127.0.0.1 } ]
     cookies:
-      - domain: 'njyzy.space'
-        subdomain: 'auth'
+      - domain: 'auth.njyzy.space'
+        default_redirection_url: 'http://homepage.njyzy.space'
   notifier:
     filesystem:
       enabled: true
