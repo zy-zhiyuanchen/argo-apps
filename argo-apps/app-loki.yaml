@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: apps/loki
-    repoURL: https://github.com/zy-zhiyuanchen/argo-apps.git
+    repoURL: https://github.com/zycheny/argo-apps.git
     targetRevision: HEAD
   syncPolicy:
     automated:

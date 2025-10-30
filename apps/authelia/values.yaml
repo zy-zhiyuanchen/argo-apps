@@ -6,7 +6,8 @@ pod:
       subPath: users.yaml
   extraVolumes:
     - name: users
-      secret: { secretName: users }
+      secret: 
+        secretName: users
 
 
 # persistence:
