@@ -3,6 +3,8 @@ kind: ApplicationSet
 metadata:
   name: monitoring
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   generators:
     - git:
@@ -13,8 +15,6 @@ spec:
   template:
     metadata:
       name: '{{ path.basename }}'
-      finalizers:
-        - resources-finalizer.argocd.argoproj.io
     spec:
       project: monitoring
       source:
