@@ -4,6 +4,7 @@ namespace: authelia
 
 resources:
   - user-secret.yaml
+  - httproute.yaml
   # - cnpg-db.yaml
   
 helmCharts:

@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: jellyfin-route
+  namespace: media
+spec:
+  parentRefs:
+    - name: cilium-gateway
+      namespace: gateway
+  hostnames:
+    - jellyfin.njyzy.space
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: jellyfin
+          port: 8096

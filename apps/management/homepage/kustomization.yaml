@@ -8,4 +8,5 @@ resources:
   - role.yaml
   - secret.yaml
   - serviceaccount.yaml
+  - httproute.yaml
   

@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: media
 resources:
   - lib-pv.yaml
+  - httproute.yaml
 helmCharts:
   - name: jellyfin
     repo: https://jellyfin.github.io/jellyfin-helm

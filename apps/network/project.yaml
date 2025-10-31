@@ -9,11 +9,11 @@ spec:
   destinations:
     - namespace: 'argocd'
       server: '*'
-    - namespace: 'external-dns'
-      server: '*'
     - namespace: 'kube-system'
       server: '*'
     - namespace: 'gateway'
+      server: '*'
+    - namespace: 'networking'
       server: '*'
   clusterResourceWhitelist:
     - group: '*'
