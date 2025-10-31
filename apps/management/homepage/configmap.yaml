@@ -45,23 +45,29 @@ data:
       - Immich:
           icon: immich.png
           href: https://immich.njyzy.space/
+          description: "Personal Photo and Video Management Service"
       - Jellyfin:
           icon: jellyfin.png
           href: https://jellyfin.njyzy.space/
+          description: "Media System for Streaming Movies, TV Shows, Music, and More"
     - Monitoring:
       - Grafana:
           icon: grafana.png
           href: https://grafana.njyzy.space/
+          description: "Open-Source Platform for Monitoring and Observability"
       - Hubble:
           icon: cilium.png
           href: https://hubble.njyzy.space/
+          description: "Cilium Hubble - Network, Security, and Application Observability"
     - Control:
       - argocd:
           icon: argo-cd.png
           href: https://argocd.njyzy.space/
+          description: "Declarative, GitOps Continuous Delivery Tool for Kubernetes"
     - Auth:
       - Authelia:
           icon: authelia.png
           href: https://auth.njyzy.space/
+          description: "Open-Source Authentication and Authorization Server"
 
 
