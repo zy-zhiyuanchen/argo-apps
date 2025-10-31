@@ -17,6 +17,8 @@ spec:
       server: '*'
     - namespace: 'authelia'
       server: '*'
+    - namespace: 'test'
+      server: '*'
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
