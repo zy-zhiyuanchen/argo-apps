@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: security
+  namespace: argocd
+spec:
+  sourceRepos:
+    - 'https://github.com/zycheny/argo-apps.git'
+  destinations:
+    - namespace: 'argocd'
+      server: '*'
+    - namespace: 'cert-manager'
+      server: '*'
+    - namespace: 'kube-system'
+      server: '*'
+    - namespace: 'sealed-secrets'
+      server: '*'
+    - namespace: 'authelia'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'

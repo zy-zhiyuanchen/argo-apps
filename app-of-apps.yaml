@@ -7,9 +7,9 @@ spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: default
+  project: app-of-apps
   source:
-    path: argo-apps
+    path: apps
     repoURL: https://github.com/zycheny/argo-apps.git
     targetRevision: HEAD
   syncPolicy:

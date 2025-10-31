@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: network
+  namespace: argocd
+spec:
+  sourceRepos:
+    - 'https://github.com/zycheny/argo-apps.git'
+  destinations:
+    - namespace: 'argocd'
+      server: '*'
+    - namespace: 'external-dns'
+      server: '*'
+    - namespace: 'kube-system'
+      server: '*'
+    - namespace: 'gateway'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
