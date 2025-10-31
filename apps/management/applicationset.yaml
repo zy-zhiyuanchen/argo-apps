@@ -18,8 +18,6 @@ spec:
     spec:
       project: management
       source:
-        plugin:
-          name: kustomize-build-with-helm
         repoURL: https://github.com/zycheny/argo-apps.git
         targetRevision: HEAD
         path: '{{ path }}'
