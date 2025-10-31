@@ -5,5 +5,4 @@ resources:
   - ns.yaml
   - storage/
   - chart/
-  - httproute.yaml
 
