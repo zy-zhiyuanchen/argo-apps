@@ -22,7 +22,6 @@ spec:
         targetRevision: HEAD
         path: '{{ path }}'
       destination:
-        namespace: argocd
         server: https://kubernetes.default.svc
       syncPolicy:
         automated:
