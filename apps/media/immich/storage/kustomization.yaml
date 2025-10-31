@@ -5,5 +5,3 @@ resources:
   - lib-pv.yaml
   - db-cluster.yaml
   - db-secret.yaml
-commonAnnotations:
-  argocd.argoproj.io/sync-wave: "0"

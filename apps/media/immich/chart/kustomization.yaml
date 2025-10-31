@@ -7,5 +7,3 @@ helmCharts:
     version: 0.10.1
     releaseName: immich
     valuesFile: values.yaml
-commonAnnotations:
-  argocd.argoproj.io/sync-wave: "1"
