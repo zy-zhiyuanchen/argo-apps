@@ -30,3 +30,4 @@ spec:
           prune: true
         syncOptions:
           - ServerSideApply=true
+          - ApplyOutOfSyncOnly=true
