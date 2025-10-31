@@ -9,7 +9,9 @@ spec:
   destinations:
     - namespace: 'argocd'
       server: '*'
-    - namespace: 'media'
+    - namespace: 'immich'
+      server: '*'
+    - namespace: 'jellyfin'
       server: '*'
     - namespace: 'kube-system'
       server: '*'

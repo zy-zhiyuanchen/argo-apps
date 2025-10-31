@@ -13,7 +13,7 @@ spec:
       server: '*'
     - namespace: 'gateway'
       server: '*'
-    - namespace: 'networking'
+    - namespace: 'external-dns'
       server: '*'
   clusterResourceWhitelist:
     - group: '*'

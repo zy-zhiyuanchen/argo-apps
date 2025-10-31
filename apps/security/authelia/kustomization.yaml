@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: authelia
 
 resources:
+  - ns.yaml
   - user-secret.yaml
   - httproute.yaml
   # - cnpg-db.yaml

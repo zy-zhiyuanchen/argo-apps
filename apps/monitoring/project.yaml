@@ -11,6 +11,10 @@ spec:
       server: '*'
     - namespace: 'monitoring'
       server: '*'
+    - namespace: 'loki'
+      server: '*'
+    - namespace: 'fluent'
+      server: '*'
     - namespace: 'kube-system'
       server: '*'
   clusterResourceWhitelist:

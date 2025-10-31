@@ -39,7 +39,7 @@ config:
     [OUTPUT]
         Name loki
         Match kube.*
-        Host loki.monitoring.svc.cluster.local
+        Host loki.loki.svc.cluster.local
         Port 3100
         Labels job=containerlog
         Label_Keys $kubernetes['namespace_name'], $kubernetes['pod_name'], $kubernetes['container_name']
@@ -47,20 +47,20 @@ config:
     [OUTPUT]
         Name loki
         Match k3s_logs
-        Host loki.monitoring.svc.cluster.local
+        Host loki.loki.svc.cluster.local
         Port 3100
         Labels job=k3s
 
     [OUTPUT]
         Name loki
         Match k8s_events
-        Host loki.monitoring.svc.cluster.local
+        Host loki.loki.svc.cluster.local
         Port 3100
         Labels job=kubelet
 
     [OUTPUT]
         Name loki
         Match syslog.*
-        Host loki.monitoring.svc.cluster.local
+        Host loki.loki.svc.cluster.local
         Port 3100
         Labels job=syslog
